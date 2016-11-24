@@ -1,0 +1,31 @@
+[{
+  "repository":{
+    "owner":"MotherNature",
+    "name":"Banana",
+    "description":"Bent yellow thingy"
+  },
+  "tweets":[{
+    "user":"HarryBelafonte",
+    "id":1,
+    "text":"Come, mister tally man, tally me banana."
+  },{
+    "user":"RyanStiles",
+    "id":2,
+    "text":"Never interrupt me when I'm eating a banana."
+  }]
+},{
+  "repository":{
+    "owner":"MotherNature",
+    "name":"Apple",
+    "description":"Round-ish red thingy"
+  },
+  "tweets":[{
+    "user":"CarlSagan",
+    "id":3,
+    "text":"If you wish to make an apple pie from scratch, you must first invent the universe."
+  },{
+    "user":"MoeHoward",
+    "id":4,
+    "text":"I'll squeeze the cider out of your adam's apple."
+  }]
+}]
