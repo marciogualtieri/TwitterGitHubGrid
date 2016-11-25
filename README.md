@@ -3,6 +3,7 @@
 ### [EXECUTE THE JAR IN THE COMMAND LINE](#execute-the-jar-in-the-command-line)
 ### [ON THE DESIGN CHOICES](#on-the-design-choices)
 ### [TEST COVERAGE REPORTS](#test-coverage-reports)
+### [CODE QUALITY ANALYSIS](#code-quality-analysis)
 ### [HOW TO VIEW THIS DOCUMENT](#how-to-view-this-document)
 ### [USEFUL REFERENCES](#useful-references)
 
@@ -278,7 +279,17 @@ have 100% line coverage in the unit test reports.
 * `GitHubApiClient`, `TwitterApiClient` and `JsonApiClient.SearchException` have 100 % line coverage in the integration tests.
 
 * `App` is the command-line app, so the proper way to test it is through a system test.
- 
+
+### <a name="code-quality-analysis"></a> CODE QUALITY ANALYSIS
+
+I always run IntelliJ's `Analyze > Inspect Code` before I commit any code. I'm also using 
+[scalastyle-sbt-plugin](http://www.scalastyle.org/sbt.html). This project includes a `scalastyle` config: 
+
+     ./scalastyle-config.xml
+
+[`SonarQube`](http://www.sonarqube.org/) is recommended, but I don't have a running server with Scala extension at the 
+moment (only Java, `//TODO`).
+
 ### <a name="how-to-view-this-document"></a> HOW TO VIEW THIS DOCUMENT
 
 This document is better viewed using IntelliJ`s GFM Plugin. In case it isn`t available, there is a PDF version of this 
