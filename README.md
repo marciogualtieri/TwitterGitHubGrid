@@ -9,6 +9,11 @@
 
 ### <a name="test-and-build-the-application"></a> TEST & BUILD THE APPLICATION
 
+***Note:***
+
+*This application was developed using SBT 0.13 and Scala 2.11. You will need to install SBT to test and build the 
+application.*
+
 #### Run Unit Tests
 
          $ sbt clean test
@@ -27,8 +32,6 @@ credentials to Git is not required. We could override `application.conf` using a
 To build a jar file with all dependencies:
      
          $ sbt clean assembly
-
-This application was developed using SBT 0.13 and Scala 2.11.
 
 ### <a name="execute-the-jar-in-the-command-line"></a> EXECUTE THE JAR IN THE COMMAND LINE
 
