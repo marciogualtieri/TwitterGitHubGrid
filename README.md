@@ -236,7 +236,7 @@ That completes the design. Here's the class diagram for the app:
     )
 
 To finalize, I also would like to be emphatic about the fact that I follow clean code principles. Sometimes I got 
-commentary about "not having enough comments in my code". I try to make my code expressive:
+commentary about "not having comments in my code". I try to make my code expressive:
 
 >“Every time you write a comment, you should grimace and feel the failure of your ability of expression.” 
 >- Robert C. Martin
