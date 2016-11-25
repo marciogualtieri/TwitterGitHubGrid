@@ -21,7 +21,8 @@
 
 *Integration tests require connection to the live GitHub and Twitter APIs, thus you will need an internet connection.
 Also, before you run integration tests, you will need to edit `src/it/resources/application.conf` with your own
-authentication info. For CI we would create a GitHub and Twitter users specifically for this purpose.*
+authentication info. For CI we would create a GitHub and Twitter users specifically for this purpose. Saving the
+credentials to Git is not required. We could override `application.conf` using a build task on Jenkins for instance.*
 
 To build a jar file with all dependencies:
      
@@ -119,7 +120,7 @@ These resources are used at the end of the day to assemble each `Cell` on the `G
      class GitHubTwitterCell {}
     )
 
-Where: *(11 x `Asset`) = (1 x `GitHubAsset` + 10 x `TwitterAsset`)*.
+Where: *(11 * `Asset`) = (1 * `GitHubAsset` + 10 * `TwitterAsset`)*.
 
 I haven't defined an abstraction for `Cell`, which would be implemented by `GitHubTwitterCell`, as for the moment
 only a (GitHub x Twitter) `Cell` is required. If we require multiple types of grids, an abstraction would come in handy,
@@ -241,8 +242,6 @@ If you don't understand what one of my classes does by its name (the same goes f
 criticism and will try to make it more expressive, but I will stick to my guns and use better naming to better 
 communicate the code's intent. I avoid cluttering my code with comments, unless they are meant for ScalaDoc for a public
 API.
-
-It's also worth to mention that I always run IntelliJ's `Analyze > Inspect Code` before I commit any code.
 
 ### <a name="test-coverage-reports"></a> TEST COVERAGE REPORTS
 
