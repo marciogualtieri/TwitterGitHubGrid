@@ -7,10 +7,10 @@ abstract class Asset {
   def value: String
 }
 case class GitHubAsset(owner: String, name: String, description: String) extends Asset {
-  override def value = description
+  override def value: String = description
 }
 case class TwitterAsset(user: String, id: BigInt, text: String) extends Asset {
-  override def owner = user
-  override def name = id.toString
-  override def value = text
+  override def owner: String = user
+  override def name: String = id.toString
+  override def value: String = text
 }

@@ -19,5 +19,4 @@ lazy val commonSettings = Seq(
 lazy val root = (project in file(".")).
   configs(IntegrationTest).
   settings(commonSettings: _*).
-  settings(Defaults.itSettings: _*).
-  enablePlugins(SonarRunnerPlugin)
+  settings(Defaults.itSettings: _*)

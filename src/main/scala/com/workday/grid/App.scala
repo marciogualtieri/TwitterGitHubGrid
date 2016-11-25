@@ -24,10 +24,13 @@ object App extends GitHubTwitterGridBuilder with AppConf {
       case Some(config) =>
         try {
           val output = execute(config.keyword.get)
-          if (config.output.isDefined) outputToFile(output, config.output.get)
-          else outputToConsole(output)
+          if (config.output.isDefined) { outputToFile(output, config.output.get) }
+          else { outputToConsole(output) }
         } catch {
-          case e: Exception => println(s"Execution failed with exception: $e")
+          case e: Exception =>
+            // scalastyle:off
+            println(s"Execution failed with exception: $e")
+            // scalastyle:on
         }
       case None =>
     }
@@ -52,7 +55,11 @@ object App extends GitHubTwitterGridBuilder with AppConf {
     }
   }
 
-  private def outputToConsole(output: String) = println(output)
+  private def outputToConsole(output: String): Unit = {
+    // scalastyle:off
+    println(output)
+    // scalastyle:on
+  }
 
   private case class CliConfig(keyword: Option[String] = None, output: Option[File] = None)
 

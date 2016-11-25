@@ -7,11 +7,11 @@ case class GitHubTwitterCell(repository: Asset, tweets: List[Asset])
 
 trait GitHubTwitterGridBuilder {
 
-  def build(query: String, primaryResource: Resource, secondaryResource: Resource): String = {
-    val summaries = for {
-      primaryAsset <- primaryResource.assets(query)
-    } yield GitHubTwitterCell(primaryAsset, secondaryResource.assets(primaryAsset.name))
-    toJsonString(summaries)
+  def build(query: String, gitHub: Resource, twitter: Resource): String = {
+    val cells = for {
+      project <- gitHub.assets(query)
+    } yield GitHubTwitterCell(project, twitter.assets(project.name))
+    toJsonString(cells)
   }
 
   private def toJsonString(summaries: List[GitHubTwitterCell]): String = {

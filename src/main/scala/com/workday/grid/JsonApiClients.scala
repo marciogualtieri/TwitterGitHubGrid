@@ -11,6 +11,10 @@ import org.json4s.{DefaultFormats, FieldSerializer, Extraction}
 import scala.collection.mutable
 
 abstract class JsonApiClient {
+  case class SearchException(message: String) extends Exception {
+    override def getMessage: String = message
+  }
+
   def search(query: String): JValue
   def close(): Unit
 }
@@ -21,16 +25,12 @@ case class GitHubApiClient(token: String) extends JsonApiClient {
 
   def search(query: String): JValue = {
     val result = (client.search.repositories ? ("q" -> query)).getOpt[JValue]
-    if(result.isDefined) result.get
-    else throw new SearchException("Check your authentication details or enable debug mode for more details.")
+    if(result.isDefined) { result.get }
+    else { throw new SearchException("Check your authentication details or enable debug mode for more details.") }
   }
 
   def close(): Unit = { client.close()
                         factory.close() }
-
-  private case class SearchException(message: String) extends Exception {
-    override def getMessage = message
-  }
 }
 
 case class Credentials(key: String, secret: String)

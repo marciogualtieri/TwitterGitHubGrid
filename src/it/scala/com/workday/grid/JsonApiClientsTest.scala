@@ -9,11 +9,19 @@ class JsonApiClientsTest extends FlatSpec with Matchers with AppConf with Integr
   "GitHub API Client" should "return JSON for query." in {
     val gitHubClient = GitHubApiClient(GitHubToken)
     val result = gitHubClient.search("buhtig user:mdread")
-    gitHubClient.close()
+    val itemId = 20213484L
 
-    idFromFirstItem(result) shouldBe JInt(20213484L)
+    idFromFirstItem(result) shouldBe JInt(itemId)
     nameFromFirstItem(result) shouldBe JString("buhtig")
     loginFromFirstItem(result) shouldBe JString("mdread")
+  }
+
+  "GitHub API Client" should "throw custom exception on failure." in {
+    val gitHubClient = GitHubApiClient("INVALID_TOKEN")
+    val thrown = intercept[gitHubClient.SearchException] {
+      gitHubClient.search("buhtig user:mdread")
+    }
+    thrown.getMessage shouldBe "Check your authentication details or enable debug mode for more details."
   }
 
   "Twitter API Client" should "return JSON for query." in {
