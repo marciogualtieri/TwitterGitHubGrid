@@ -301,7 +301,7 @@ For my own reference, to convert markdown to PDF use [pandoc](http://pandoc.org/
 
     pandoc README.md -f markdown -t latex -s -o README.pdf
 
-### <a name="useful-resources"></a> USEFUL RESOURCES
+### <a name="useful-references"></a> USEFUL REFERENCES
 
 * [GitHub REST API Repository Search](https://developer.github.com/v3/search/#search-repositories)
 * [Twitter REST API Search](https://dev.twitter.com/rest/public/search)
