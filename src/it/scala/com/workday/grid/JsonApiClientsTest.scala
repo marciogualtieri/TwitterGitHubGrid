@@ -6,9 +6,11 @@ import org.scalatest.{Matchers, FlatSpec}
 
 class JsonApiClientsTest extends FlatSpec with Matchers with AppConf with IntegrationTestHelper {
 
+  val buhtigQuery = "buhtig user:mdread"
+
   "GitHub API Client" should "return JSON for query." in {
     val gitHubClient = GitHubApiClient(GitHubToken)
-    val result = gitHubClient.search("buhtig user:mdread")
+    val result = gitHubClient.search(buhtigQuery)
     val itemId = 20213484L
 
     idFromFirstItem(result) shouldBe JInt(itemId)
@@ -19,7 +21,7 @@ class JsonApiClientsTest extends FlatSpec with Matchers with AppConf with Integr
   "GitHub API Client" should "throw custom exception on failure." in {
     val gitHubClient = GitHubApiClient("INVALID_TOKEN")
     val thrown = intercept[gitHubClient.SearchException] {
-      gitHubClient.search("buhtig user:mdread")
+      gitHubClient.search(buhtigQuery)
     }
     thrown.getMessage shouldBe "Check your authentication details or enable debug mode for more details."
   }

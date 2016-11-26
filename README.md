@@ -200,9 +200,9 @@ grid, a JSON output, from the input search keyword and resources.
 parsing command-line arguments, `App` uses [`scopt`](https://github.com/scopt/scopt).
 
 
-That completes the design. Here's the class diagram for the app:
+That completes the design. Here's the class diagram for the complete app:
 
-![App Class Diagram](http://g.gravizo.com/g?
+![Complete App Class Diagram](http://g.gravizo.com/g?
     interface Asset {}
     class GitHubAsset implements Asset {}
     class TwitterAsset implements Asset {}
