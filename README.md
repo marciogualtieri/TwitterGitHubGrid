@@ -103,7 +103,6 @@ respective resources:
 
 <!---
 custom_mark1
-![GitHub Asset and Resource Class Diagram](http://g.gravizo.com/g?
     interface Asset {}
     class GitHubAsset implements Asset {}
     class TwitterAsset implements Asset {}
