@@ -99,10 +99,10 @@ Resources provide `Assets`, therefore data from GitHub for a particular project 
 data from Twitter for a particular tweet represents another `Asset`. Assets are collections of data provided by its 
 respective resources:
 
-![](https://g.gravizo.com/source/svg/custom_mark1?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
+![](https://g.gravizo.com/source/svg/custom_mark11?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
 
 <!---
-custom_mark1
+custom_mark11
     interface Asset {}
     class GitHubAsset implements Asset {}
     class TwitterAsset implements Asset {}
@@ -112,15 +112,15 @@ custom_mark1
     interface Resource {}
     class GitHubResource implements Resource {}
     class TwitterResource implements Resource {}
-custom_mark1
+custom_mark11
 -->
 
 These resources are used at the end of the day to assemble each `Cell` on the `Grid`:
 
-![](https://g.gravizo.com/source/svg/custom_mark2?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
+![](https://g.gravizo.com/source/svg/custom_mark22?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
 
 <!---
-custom_mark2
+custom_mark22
     interface Asset {}
     class GitHubAsset implements Asset {}
     class TwitterAsset implements Asset {}
@@ -128,7 +128,7 @@ custom_mark2
      *@composed 1 Has 11 Asset
      */
      class GitHubTwitterCell {}
-custom_mark2
+custom_mark22
 -->
 
 Where: *(11 * `Asset`) = (1 * `GitHubAsset` + 10 * `TwitterAsset`)*.
