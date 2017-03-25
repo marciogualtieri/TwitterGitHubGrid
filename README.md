@@ -120,7 +120,7 @@ These resources are used at the end of the day to assemble each `Cell` on the `G
 ![](https://g.gravizo.com/source/svg/custom_mark2?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
 
 <!---
-custom_mark1
+custom_mark2
     interface Asset {}
     class GitHubAsset implements Asset {}
     class TwitterAsset implements Asset {}
