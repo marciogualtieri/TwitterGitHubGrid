@@ -99,6 +99,10 @@ Resources provide `Assets`, therefore data from GitHub for a particular project 
 data from Twitter for a particular tweet represents another `Asset`. Assets are collections of data provided by its 
 respective resources:
 
+![](https://g.gravizo.com/source/svg/custom_mark1?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
+
+<!---
+custom_mark1
 ![GitHub Asset and Resource Class Diagram](http://g.gravizo.com/g?
     interface Asset {}
     class GitHubAsset implements Asset {}
@@ -109,11 +113,15 @@ respective resources:
     interface Resource {}
     class GitHubResource implements Resource {}
     class TwitterResource implements Resource {}
-    )
+custom_mark1
+-->
 
 These resources are used at the end of the day to assemble each `Cell` on the `Grid`:
 
-![Asset and Resource Class Diagram](http://g.gravizo.com/g?
+![](https://g.gravizo.com/source/svg/custom_mark2?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
+
+<!---
+custom_mark1
     interface Asset {}
     class GitHubAsset implements Asset {}
     class TwitterAsset implements Asset {}
@@ -121,7 +129,8 @@ These resources are used at the end of the day to assemble each `Cell` on the `G
      *@composed 1 Has 11 Asset
      */
      class GitHubTwitterCell {}
-    )
+custom_mark2
+-->
 
 Where: *(11 * `Asset`) = (1 * `GitHubAsset` + 10 * `TwitterAsset`)*.
 
@@ -141,7 +150,10 @@ work in progress, therefore I have opted for [`twitter4j`](http://twitter4j.org/
 [`buhtig`](https://github.com/mdread/buhtig), a GitHub API client, is Scala and it seems in good shape. It uses `json4s`
 and it's very straightforward to use.
 
-![Asset and Resource Class Diagram](http://g.gravizo.com/g?
+![](https://g.gravizo.com/source/svg/custom_mark3?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
+
+<!---
+custom_mark3
     /**
      *@opt all
      */
@@ -158,7 +170,8 @@ and it's very straightforward to use.
      *@composed 1 Has 1 JsonApiClient
      */
     class TwitterResource {}
-    )
+custom_mark3
+-->
 
 The APIs are decoupled from the resources through the interface `JsonApiClient`, which defines a method `search`, which
 gets a query string as an argument and returns a JSON object.
@@ -170,7 +183,10 @@ community, thus using a Scala native type here (such as `String`) would be overk
 
 Finally, once we have all data abstractions and its specializations in place, we can define the final App:
 
-![App Class Diagram](http://g.gravizo.com/g?
+![](https://g.gravizo.com/source/svg/custom_mark4?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
+
+<!---
+custom_mark4
     /**
      *@opt all
      */
@@ -191,7 +207,8 @@ Finally, once we have all data abstractions and its specializations in place, we
      *@composed 1 Has 1 AppConf
      */
     class App {}
-    )
+custom_mark4
+-->
 
 `GitHubTwitterGridBuilder` is a Scala trait, which `App`, a Scala object and main command-line app, uses to generate the 
 grid, a JSON output, from the input search keyword and resources.
@@ -202,7 +219,10 @@ parsing command-line arguments, `App` uses [`scopt`](https://github.com/scopt/sc
 
 That completes the design. Here's the class diagram for the complete app:
 
-![Complete App Class Diagram](http://g.gravizo.com/g?
+![](https://g.gravizo.com/source/svg/custom_mark5?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FTwitterGitHubGrid%2Fmaster%2FREADME.md)
+
+<!---
+custom_mark5
     interface Asset {}
     class GitHubAsset implements Asset {}
     class TwitterAsset implements Asset {}
@@ -233,7 +253,8 @@ That completes the design. Here's the class diagram for the complete app:
      *@composed 1 Has 1 AppConf
      */
     class App {}
-    )
+custom_mark5
+-->
 
 To finalize, I also would like to be emphatic about the fact that I follow clean code principles. Sometimes I got 
 commentary about "not having comments in my code". I try to make my code expressive:
